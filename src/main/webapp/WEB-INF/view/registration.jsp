@@ -94,25 +94,21 @@
                     <a href="#"><i class="fa fa-dribbble"></i></a>
                     <a href="#"><i class="fa fa-behance"></i></a>
                 </div>
-                <%--<form:form action="saveUserSpringForm" method="post" modelAttribute="emptyUser" class="contact-form">--%>
-                        <%--<form:input path="email" type="email" placeholder="Enter email"/>--%>
-                    <div class="rs1-select2 bor8 bg0 ${status.error ? 'has-error' : ''}">
+                    <div class="promo-code-form">
                         <input path="username" id="username" type="text" placeholder="Enter login"/>
-                        <%--<form:errors path="username" class="cs"/>--%>
                     </div>
-                    <div class="rs1-select2 bor8 bg0 ${status.error ? 'has-error' : ''}">
+                    <div class="promo-code-form">
                         <input path="password" id="password" type="password" placeholder="Enter password" onkeyup="doAjax()"/>
-                        <%--<form:errors path="password" class="cs"/>--%>
+
                         <span style="float: right" id="strengthValue"></span>
                     </div>
-                    <div class="rs1-select2 bor8 bg0 ${status.error ? 'has-error' : ''}">
+                    <div class="promo-code-form">
                         <input path="confirmPassword" id="confirmPassword" type="password" placeholder="Confirm password"/>
-                        <%--<form:errors path="confirmPassword" class="cs"/>--%>
                     </div>
-                    <%--<button class="site-btn">Applay</button>--%>
-                    <input type="button" id="buttonId" value="submit">
+                    <div>
+                        <input type="button" id="buttonId" value="submit" class="site-btn">
+                    </div>
                     <p><div id="result"></div></p>
-                <%--</form:form>--%>
             </div>
         </div>
     </div></section>

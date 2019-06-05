@@ -120,46 +120,42 @@
                 </div>
             </div>
             <div class="col-lg-4 card-right">
-                <c:url value="/product/add" var="addProduct"/>
-                <form:form action="${addProduct}" modelAttribute="emptyProduct" enctype="multipart/form-data" class="contact-form">
                     <div class="promo-code-form">
-                        <form:input id="productBrand"  path="productBrand" class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state" placeholder="Brand"/>
+                        <input id="productBrand"  path="productBrand" class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state" placeholder="Brand"/>
                     </div>
                     <div class="promo-code-form">
-                        <form:input id="productModel" path="productModel" class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state" placeholder="Model"/>
+                        <input id="productModel" path="productModel" class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="state" placeholder="Model"/>
                     </div>
                     <div class="promo-code-form">
-                        <form:textarea id="description" path="description" class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="postcode" placeholder="description"/>
+                        <input id="description" path="description" class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="postcode" placeholder="description"/>
                     </div>
                     <div class="promo-code-form">
-                        <form:input id="price" path="price" class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="postcode" placeholder="price"/>
+                        <input id="price" path="price" class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="postcode" placeholder="price"/>
                     </div>
                     <div class="promo-code-form">
-                        <input type="file" id="productImg" name="productImg" class="promo-code-form" formenctype="multipart/form-data" id="exampleformControlFile1">
+                        <input type="file" id="productImg" name="productImg" class="promo-code-form" formenctype="multipart/form-data" id="productImg">
                     </div>
                     <div class="promo-code-form">
-                        <form:select id="category" class="js-select2" name="time" path="category">
+                        <select id="category" class="js-select2" name="time" path="category">
                             <option>men</option>
                             <option>women</option>
                             <option>kid</option>
                             <option>accessories</option>
-                        </form:select>
+                        </select>
 
-                        <form:select id="subCategory" class="js-select2" name="time" path="subCategory">
+                        <select id="subCategory" class="js-select2" name="time" path="subCategory">
                             <option>hardTail</option>
                             <option>roadBike</option>
                             <option>CityBike</option>
                             <option>Enduro</option>
-                        </form:select>
-                        <form:select id="available" path="available" class="s-select2" name="available">
+                        </select>
+                        <select id="available" path="available" class="s-select2" name="available">
                             <option>true</option>
                             <option>false</option>
-                        </form:select>
+                        </select>
                     </div>
 
-                    <form:input type="hidden" path="id" readonly="true"/>
-                    <input type="button" value="add product" class="site-btn" id="ajaxSave">
-                </form:form>
+                    <input type="button" value="add product" class="site-btn" id="ajaxSaveProduct">
                 <div id="errorMess"></div>
             </div>
         </div>

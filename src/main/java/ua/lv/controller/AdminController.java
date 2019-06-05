@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ua.lv.entity.Product;
+import ua.lv.entity.User;
 import ua.lv.service.ProductService;
 
 /**
@@ -16,24 +17,19 @@ public class AdminController {
     @Autowired
     ProductService productService;
 
-    @GetMapping(value = "/admin")
-    public String toAdmin(Model model, @ModelAttribute("emptyProduct")Product product){
 
-        model.addAttribute("productList",productService.findAll());
+
+
+    @GetMapping("/admin")
+    public String toAdmin(Model model){
+        model.addAttribute("emptyProduct", new Product());
         return "admin";
     }
 
-    @RequestMapping(value = "/ajaxSaveProduct", method = RequestMethod.POST)
-    public String saveProduct(@RequestParam("productModel") String productModel,
-                              @RequestParam("productBrand") String productBrand,
-                              @RequestParam("productImg") String productImg,
-                              @RequestParam("category") String category,
-                              @RequestParam("subCategory") String subCategory,
-                              @RequestParam("available") boolean available,
-                              @RequestParam("price") int price,
-                              @RequestParam("description")String description){
-
-        productService.saveProduct(new Product(productBrand,productModel,productImg,category,subCategory,price,available,description));
-        return "admin";
+    @RequestMapping(method = RequestMethod.POST, value = "/saveProduct",produces = {"text/html; charset=UTF-8"})
+    public @ResponseBody
+    String saveProduct(@ModelAttribute Product product){
+        productService.saveProduct(product);
+        return "success";
     }
 }

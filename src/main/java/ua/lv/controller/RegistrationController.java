@@ -1,6 +1,7 @@
 package ua.lv.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -28,22 +29,16 @@ public class RegistrationController {
         return "registration";
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/saveUserSpringForm")
-    public String saveUser(@ModelAttribute ("emptyUser")  User user){
 
-        userService.addUser(user);
 
-        return "redirect:/login";
-    }
-
-    @RequestMapping(method = RequestMethod.POST, value = "/saveUserAjax",produces = {"text/html; charset=UTF-8"})
+    @RequestMapping(method = RequestMethod.POST, value = "/saveUserAjax2",produces = {"text/html; charset=UTF-8"})
     public @ResponseBody
-    User saveAjaxUser(@RequestParam  User userObj){
-
-        userService.addUser(userObj);
-
-        return userObj;
+    String saveUser2(@ModelAttribute User user){
+        userService.addUser(user);
+        return "success";
     }
+
+
 
     @RequestMapping(value = "/checkStrength", method = RequestMethod.GET,produces = {"text/html; charset=UTF-8"})
     public @ResponseBody
